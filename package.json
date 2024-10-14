@@ -19,7 +19,7 @@
     "docker-dev-build": "docker build -f Dockerfile.dev -t zahramaslavi/docker-test .",
     "docker-dev-run": "docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app zahramaslavi/docker-test",
     "docker-dev-stop": "chmod +x stop-container.sh && ./stop-container.sh zahramaslavi/docker-test",
-    "docker-dev-test": "docker run -t zahramaslavi/docker-test yarn test",
+    "docker-dev-test": "docker run -e CI=true zahramaslavi/docker-test yarn test",
     "docker-prod-build": "docker build -t zahramaslavi/docker-test-prod .",
     "docker-prod-run": "docker run -p 8080:80 zahramaslavi/docker-test-prod"
   },
